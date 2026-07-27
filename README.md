@@ -25,8 +25,8 @@ A Power BI dashboard is also developed to visualize crop recommendations and dat
 # ⚙ Hardware Components
 
 - Arduino Uno
-- Soil NPK Sensor (RS485 Modbus)
-- MAX485 TTL to RS485 Module
+- Soil NPK Sensor 
+- RS485 Module
 - OLED Display (SSD1306)
 - Jumper Wires
 - USB Cable
@@ -37,7 +37,6 @@ A Power BI dashboard is also developed to visualize crop recommendations and dat
 
 - Arduino IDE
 - Python
-- Jupyter Notebook
 - Power BI
 - Google Colab
 
@@ -52,7 +51,6 @@ The machine learning model is trained using the Crop Recommendation dataset cont
 - Potassium
 - Temperature
 - Humidity
-- pH
 - Rainfall
 
 The trained model predicts the most suitable crop based on these agricultural parameters.
@@ -67,9 +65,8 @@ The Power BI dashboard provides visual insights from the crop recommendation dat
 
 # 🔌 Hardware Circuit
 
-<p align="center">
-<img src="Circuit_Diagram.png" width="900">
-</p>
+<img width="3000" height="2972" alt="circuit_image (1)" src="https://github.com/user-attachments/assets/5f725d26-97c2-421a-b8a3-de0623ae765e" />
+
 
 ---
 
