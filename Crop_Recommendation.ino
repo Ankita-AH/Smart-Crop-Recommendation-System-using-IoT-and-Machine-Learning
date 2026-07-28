@@ -11,20 +11,18 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define RE 8
 #define DE 7
 
-// Modbus Commands
 const byte nitro[] = {0x01,0x03,0x00,0x1e,0x00,0x01,0xe4,0x0c};
 const byte phos[]  = {0x01,0x03,0x00,0x1f,0x00,0x01,0xb5,0xcc};
 const byte pota[]  = {0x01,0x03,0x00,0x20,0x00,0x01,0x85,0xc0};
 
 byte values[11];
 
-// RS485 connected to pins 2 and 3
 SoftwareSerial mod(2,3);
 
 void setup() {
 
-  Serial.begin(9600);      // Bluetooth via HC-05 (pins 0,1)
-  mod.begin(9600);         // NPK sensor
+  Serial.begin(9600);      
+  mod.begin(9600);         
 
   pinMode(RE, OUTPUT);
   pinMode(DE, OUTPUT);
@@ -52,27 +50,12 @@ void loop() {
   int K = (int)potassium();
   delay(250);
 
-  // ===== Serial Monitor Output =====
-  //Serial.print("Nitrogen: ");
-  //Serial.print(N);
-  //Serial.println(" mg/kg");
-
-  //Serial.print("Phosphorous: ");
-  //Serial.print(P);
-  //Serial.println(" mg/kg");
-
-  //Serial.print("Potassium: ");
-  //Serial.print(K);
-  //Serial.println(" mg/kg");
-  //Serial.println("----------------------");
-
   Serial.print(N);
   Serial.print(",");
   Serial.print(P);
   Serial.print(",");
   Serial.println(K);
 
-  // ===== OLED Display =====
   display.clearDisplay();
 
   display.setTextSize(2);
